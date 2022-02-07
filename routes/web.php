@@ -15,22 +15,24 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\FolderController;
+use Illuminate\Support\Facades\Auth;
 
-Route::get('/folders/{id}/tasks', [TaskController::class, 'index'])->name('tasks.index');
-Route::get('/folders/{id}/tasks/create', [TaskController::class, 'showCreateForm'])->name('tasks.create');
-Route::post('/folders/{id}/tasks/create', [TaskController::class, 'create']);
-Route::get('/folders/{id}/tasks/{task_id}/edit', [TaskController::class, 'showEditForm'])->name('tasks.edit');
-Route::post('/folders/{id}/tasks/{task_id}/edit', [TaskController::class, 'edit']);
+Route::group(['middleware' => 'auth'], function(){
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     
-
-Route::get('folders/create', [FolderController::class, 'showCreateForm'])->name('folders.create');
-Route::post('folders/create', [FolderController::class, 'create']);
-
-
-Route::get('/', function () {
-    return view('welcome');
+    Route::get('/folders/{id}/tasks', [TaskController::class, 'index'])->name('tasks.index');
+    Route::get('/folders/{id}/tasks/create', [TaskController::class, 'showCreateForm'])->name('tasks.create');
+    Route::post('/folders/{id}/tasks/create', [TaskController::class, 'create']);
+    Route::get('/folders/{id}/tasks/{task_id}/edit', [TaskController::class, 'showEditForm'])->name('tasks.edit');
+    Route::post('/folders/{id}/tasks/{task_id}/edit', [TaskController::class, 'edit']);
+        
+    
+    Route::get('folders/create', [FolderController::class, 'showCreateForm'])->name('folders.create');
+    Route::post('folders/create', [FolderController::class, 'create']);
 });
+
+
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
