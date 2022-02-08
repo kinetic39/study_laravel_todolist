@@ -33,6 +33,6 @@ class FolderController extends Controller
         // インスタンスの状態をデータベースに書き込む
         //$folder->save();
 
-        return redirect()->route('tasks.index', ['id' => $folder->id,]);
+        return redirect()->route('tasks.index', ['folder' => $folder->id,]);
     }
 }
