@@ -1,10 +1,11 @@
 # study_laravel_todolist
 
-=======
+リポジトリの説明文は一番下に記載してあります。
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
@@ -68,3 +69,11 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
+## このリポジトリについて
+
+Laravelの学習として，ブログ[入門Laravelチュートリアル | Hypertext Candy](https://www.hypertextcandy.com/laravel-tutorial-introduction/)を参考にToDoリストを作成しました。ただし，このブログとは下記の通り開発環境が異なっております。  
+
+|/|ブログ|このリポジトリ|
+|---|---|---|
+|Laravelバージョン|7|8|
+|Database|PosgreSQL|MySQL|
